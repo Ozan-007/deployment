@@ -9,14 +9,10 @@ app.use(cors());
 
 const io = new Server(server, {
   cors: {
-    origin: "https://venerable-moxie-202209.netlify.app/",
+    origin: "https://localhost:5173/",
     methods: ["GET", "POST"],
     credentials: true,
   },
-});
-
-app.get("/api", (req, res) => {
-  res.json({ users: ["userOne"] });
 });
 
 io.on("connection", (socket) => {
