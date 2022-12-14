@@ -15,6 +15,10 @@ const io = new Server(server, {
   },
 });
 
+app.get("/api", (req, res) => {
+  res.json({ users: ["userOne"] });
+});
+
 io.on("connection", (socket) => {
   console.log(`User Connected: ${socket.id}`);
   socket.on("disconnect", () => {
